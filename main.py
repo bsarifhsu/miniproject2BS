@@ -11,6 +11,10 @@ from pathlib import Path
 # Read the data from DataSet school_scores.csv and save it to Pandas DataFrame
 schoolScores = pd.read_csv("school_scores.csv")
 
+# It shows a quick statistic summary of the dataset.
+stats = schoolScores.describe()
+print(stats)
+
 
 # Plot the Total Number of Test Takers across the United States
 schoolScores.plot(x="State.Code", y="Total.Test-takers")
