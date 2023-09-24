@@ -6,6 +6,8 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
+
 
 # Dataset is downloaded from : https://www.kaggle.com/datasets/mexwell/us-school-scores
 
@@ -13,10 +15,16 @@ import matplotlib.pyplot as plt
 schoolScores = pd.read_csv("school_scores.csv")
 
 # Plot the Total Number of Test Takers across the United States
-schoolScores.plot(x="State.Code", y="Total.Test-takers", alpha=0.5)
-plt.title("Total Test Takers Across the United States")
+schoolScores.plot(x="State.Code", y="Total.Test-takers")
+plotTitle = plt.title("Total Test Takers Across the United States")
 plt.ylabel("Number of the Test Takers")
 plt.xlabel("States")
+
+# Saves plot
+saveChart = "charts/" + plotTitle.get_text() + ".png"
+plt.savefig(saveChart)
+
+# Displays the Chart
 plt.show()
 
 
@@ -26,3 +34,12 @@ plt.show()
 # (10/10 points) There should be a minimum of 5 commits on your project, be sure to commit often!
 # (10/10 points) I will be checking out the master branch of your project. Please be sure to include a requirements.txt file which contains all the packages that need installed. You can create this fille with the output of pip freeze at the terminal prompt.
 # (20/20 points) There should be a README.md file in your project that explains what your project is, how to install the pip requirements, and how to execute the program. Please use the GitHub flavor of Markdown. Be thorough on the explanations.
+
+
+# Start of the program
+# It creates the chart folder
+try:
+    # Create the charts folder
+    Path("charts").mkdir()
+except FileExistsError:
+    pass
