@@ -9,18 +9,32 @@ from pathlib import Path
 
 # Dataset is downloaded from : https://www.kaggle.com/datasets/mexwell/us-school-scores
 # Read the data from DataSet school_scores.csv and save it to Pandas DataFrame
-schoolScores = pd.read_csv("school_scores.csv")
+schoolScores = pd.read_csv("school_scores.csv",index_col="Year")
 
 # It shows a quick statistic summary of the dataset.
 stats = schoolScores.describe()
 print(stats)
 
+grouped = schoolScores.groupby("State.Code")["Total.Test-takers"].sum()
+
+# Generate a bar chart
+# Sets the size of the figure.
+plt.figure(figsize=(10, 5))
+# Type of the figure is set to Bar.
+plt.bar(grouped.index, grouped.values)
+chartTitle = plt.title("Total Number of Test Takers by State")
+plt.xlabel("States")
+plt.ylabel("Total Test Takers")
+# Turns the States Codes 90 degree upwards.
+plt.xticks(rotation=90)
+plt.tight_layout()
+
 
 # Plot the Total Number of Test Takers across the United States
-schoolScores.plot(x="State.Code", y="Total.Test-takers")
-chartTitle = plt.title("Total Test Takers Across the United States")
-plt.ylabel("Test Takers")
-plt.xlabel("States")
+# schoolScores.plot(x="State.Code", y="Total.Test-takers")
+# chartTitle = plt.title("Total Test Takers Across the United States")
+# plt.ylabel("Test Takers")
+# plt.xlabel("States")
 
 
 # Saves plot
