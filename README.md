@@ -3,9 +3,10 @@
 #### miniproject2BS
 
 ## Description
-This project uses the dataset from Kaggle that can be found at this [link](https://www.kaggle.com/datasets/mexwell/us-school-scores).
-The dataset shows the SAT scores across the United States. This project generates basic statistic on the mentioned dataset. 
-It stores the data on Pandas dataframes, and builts charts using the matplotlib. 
+This project utilizes a dataset sourced from Kaggle, accessible via the provided [link](https://www.kaggle.com/datasets/mexwell/us-school-scores). 
+The dataset comprises SAT scores from across the United States. 
+The primary objective of this project is to conduct a fundamental statistical analysis on the aforementioned dataset. 
+The data is organized and stored using Pandas dataframes, and visual representations are constructed utilizing matplotlib.
 ## Pip Install Instructions
 Please run the following: 
 ```
