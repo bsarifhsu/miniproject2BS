@@ -8,6 +8,9 @@ import pandas as pd
 
 # Dataset is downloaded from : https://www.kaggle.com/datasets/mexwell/us-school-scores
 
+scores = pd.read_csv("school_scores.csv")
+print(scores.head())
+
 
 # (10/10 points) Store this information in Pandas dataframe. These should be 2D data as a dataframe, meaning the data is labeled tabular data.
 # (10/10 points) Using matplotlib, graph this data in a way that will visually represent the data. Really try to build some fancy charts here as it will greatly help you in future homework assignments and in the final project.
