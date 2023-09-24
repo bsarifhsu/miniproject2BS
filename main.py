@@ -5,11 +5,19 @@
 # (5/5 points) Proper import of packages used.
 
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Dataset is downloaded from : https://www.kaggle.com/datasets/mexwell/us-school-scores
 
-scores = pd.read_csv("school_scores.csv")
-print(scores.head())
+# Read the data from DataSet school_scores.csv and save it to Pandas DataFrame
+schoolScores = pd.read_csv("school_scores.csv")
+
+# Plot the Total Number of Test Takers across the United States
+schoolScores.plot(x="State.Code", y="Total.Test-takers", alpha=0.5)
+plt.title("Total Test Takers Across the United States")
+plt.ylabel("Number of the Test Takers")
+plt.xlabel("States")
+plt.show()
 
 
 # (10/10 points) Store this information in Pandas dataframe. These should be 2D data as a dataframe, meaning the data is labeled tabular data.
