@@ -3,9 +3,9 @@
 #### miniproject2BS
 
 ## Description
-Using a data source, such as data from data.gov or using the Faker package, this peoject generates or retrieves some data for creating basic statistics on. 
-This will generally come in as json data.
-
+This project uses the dataset from Kaggle that can be found at this [link](https://www.kaggle.com/datasets/mexwell/us-school-scores).
+The dataset shows the SAT scores across the United States. This project generates basic statistic on the mentioned dataset. 
+It stores the data on Pandas dataframes, and builts charts using the matplotlib. 
 ## Pip Install Instructions
 Please run the following: 
 ```
