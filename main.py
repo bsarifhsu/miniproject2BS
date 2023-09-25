@@ -33,7 +33,6 @@ def generateChart():
     # Axes on the figure adjusted to avoid the overlaying content.
     plt.tight_layout()
 
-
     # Saves plot
     saveChart = "charts/" + chartTitle.get_text() + ".png"
     plt.savefig(saveChart)
@@ -42,12 +41,14 @@ def generateChart():
     plt.show()
 
 
-# Start of the program
-readDataSet()
-generateChart()
+
 # It creates the chart folder
 try:
     # Create the charts folder
     Path("charts").mkdir()
 except FileExistsError:
     pass
+
+# Start of the program
+readDataSet()
+generateChart()
